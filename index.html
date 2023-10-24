@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal {
+            background-image: linear-gradient(to bottom right, rgb(75, 32, 75), aqua);
+            width: 410px;
+            max-height: 300px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 15px;
+            margin: auto;
+            position: relative;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            text-align: center;
+            
+
+        }
+        .remove{
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            border-radius: 50%;
+        }
+        .remove:hover{
+            background-color: black;
+            color: white;
+            transition: 0.5s;
+        }
+        .button{
+            border-radius: 35px;
+            padding: 15px 20px;
+            margin-left: 700px;
+            margin-top: 200px;
+            margin-bottom: 10px;
+        }
+        .button:hover{
+            background-color: black;
+            color: white;
+            transition: 0.5s;
+        }
+        .picture{
+            width: 180px;
+            border-radius: 100%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let body = document.querySelector('body');
+        let div = document.createElement('div');
+        let h1 = document.createElement('h1');
+        let h3 = document.createElement('h3');
+        let p = document.createElement('p')
+        let hr = document.createElement('hr')
+        let btn = document.createElement('button')
+        let cancel = document.createElement('button')
+        let image = document.createElement('img')
+
+        image.src='https://logowik.com/content/uploads/images/code-academy2945.logowik.com.webp'
+        cancel.textContent = 'x'
+        btn.textContent = 'Open Modal'
+        h1.textContent = 'Student: Ehmedov Ilkin';
+        h3.textContent = 'Age: 20 years';
+        p.textContent = 'Group: AF104'
+
+        // asagida body'e birce reng verdiyim ucun elave class yaratmadim sadece style verdim
+        body.style.backgroundColor = 'gray'
+
+        body.append(btn);
+        div.append(image,hr,h1, h3,p,cancel);
+
+        btn.classList.add('button')
+        cancel.classList.add('remove')
+        div.classList.add('modal')
+        image.classList.add('picture')
+
+        btn.onclick=()=>{
+            body.append(div)
+        }
+        cancel.onclick=()=>{
+            div.remove()
+        }
+
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
